@@ -1,8 +1,16 @@
 
 import ExpenseItem from './components/ExpenseItem.jsx'
 import ExerciseComponent from './components/ExerciseComponent.jsx'
+import Product from './components/Product.jsx';
+import Expenses from "./components/Expenses.jsx"
 
 function App() {
+
+  const products = [
+    {title: "Product1", price: 10, description: "First product"},
+    {title: "Product2", price: 20, description: "Second product"},
+  ]
+
   const expenses = [
     {
       id: 'e1',
@@ -31,7 +39,13 @@ function App() {
 
   return (
     <div>
-        {expenses.map(expense => {return(<ExpenseItem title={expense.title} amount={expense.amount} date={expense.date} key={expense.id}/>)})};
+      <Expenses expenses = {expenses}/>
+
+        <div>
+          <h1>My shop</h1>
+          <Product title={products[0].title} price={products[0].price} description={products[0].description}></Product>
+          <Product title={products[1].title} price={products[1].price} description={products[1].description}></Product>
+        </div>
     </div>
   )
 }
