@@ -43,10 +43,10 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onAnyEventWeWant={()=>handleClick('components')}>Components</TabButton>
-            <TabButton onAnyEventWeWant={()=>handleClick('jsx')}>JSX</TabButton>
-            <TabButton onAnyEventWeWant={()=>handleClick('props')}>Props</TabButton>
-            <TabButton onAnyEventWeWant={()=>handleClick('state')}>State</TabButton>
+            <TabButton isSelected={selectedTopic === 'components'} onAnyEventWeWant={()=>handleClick('components')}>Components</TabButton>
+            <TabButton isSelected={selectedTopic === 'jsx'} onAnyEventWeWant={()=>handleClick('jsx')}>JSX</TabButton>
+            <TabButton isSelected={selectedTopic === 'props'} onAnyEventWeWant={()=>handleClick('props')}>Props</TabButton>
+            <TabButton isSelected={selectedTopic === 'state'} onAnyEventWeWant={()=>handleClick('state')}>State</TabButton>
           </menu>
           {tabContent}
         </section>
@@ -54,5 +54,5 @@ function App() {
     </div>
   );
 }
-
+ 
 export default App;
